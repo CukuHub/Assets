@@ -1,0 +1,11 @@
+{
+  "name": "com.cuku.assets",
+  "version": "24.1.22",
+  "displayName": "Cuku.Assets",
+  "description": "Addressable Assets Extensions.",
+  "unity": "2023.3",
+  "documentationUrl": "https://github.com/CukuHub/Assets.git",
+  "author": {
+    "name": "Cuku"
+  }
+}
