@@ -11,7 +11,7 @@ namespace Cuku.Assets
     /// <summary>
     /// Addressable assets utilities.
     /// </summary>
-    public static class Extensions
+    public static class Assets
     {
         #region Asset
 
@@ -73,6 +73,18 @@ namespace Cuku.Assets
 
         public static void UnloadScene(this AsyncOperationHandle handle)
             => Addressables.UnloadSceneAsync(handle);
+
+        #endregion
+
+        #region TextAsset
+
+        public static async UniTask<string> LoadTextAsync(this string key)
+        {
+            var asset = await key.LoadAsset<TextAsset>();
+            var text = asset.Value.text;
+            asset.Key.UnloadAsset();
+            return text;
+        }
 
         #endregion
     }
